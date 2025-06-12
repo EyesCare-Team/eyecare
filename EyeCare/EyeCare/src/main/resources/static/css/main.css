@@ -1,0 +1,244 @@
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Pretendard', sans-serif;
+    background-color: #fff;   /* 전체 배경 흰색 */
+    color: #111;              /* 본문 텍스트 진한 검정 */
+    overflow-x: hidden;
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;      /* 헤더도 흰색 */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111;                 /* 헤더 글씨 검정 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 로고 심플하게 */
+.logo-link {
+    color: #111;                /* 검정 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+.logo-link:hover {
+    color: #000;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+/* 헤더 버튼 - 검정 배경, 흰색 글씨 */
+.header-btn {
+    padding: 0.5rem 1rem;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.22s;
+    font-weight: 500;
+}
+.header-btn:hover {
+    background-color: #000;
+}
+
+/* 메인 병원/안경 섹션 */
+.main-section {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 400px; /* 상품 위에 적당한 높이로 설정 */
+}
+
+.hospital-section,
+.glasses-section {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* 기본 비율 */
+.hospital-section {
+    flex: 1;
+    background-image: url('https://source.unsplash.com/600x400/?hospital');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glasses-section {
+    flex: 2;
+    background-image: url('https://source.unsplash.com/600x400/?glasses,optical');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* 배경 이미지 설정 */
+.section-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 병원 버튼 */
+.hospital-section button {
+    z-index: 1;
+    padding: 0.8rem 1.5rem;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.22s;
+    font-weight: 500;
+}
+.hospital-section button:hover {
+    background-color: #000;
+}
+
+/* 상품 섹션 */
+.products-section {
+    background-color: #fff;   /* 배경 흰색 */
+    padding: 2rem;
+}
+
+/* 타이틀 - 검정 */
+.products-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #111;
+    font-weight: 600;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem 4rem;
+    margin-bottom: 2rem;
+}
+
+.product-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 250px;
+    max-width: 280px;
+}
+
+.product {
+    background-color: #ffffff;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product-info {
+    margin-top: 0.8rem;
+    color: #2c3e50;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* 아래 상품 숨기기 */
+.product-list.hidden {
+    display: none;
+}
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+    .main-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hospital-section,
+    .glasses-section {
+        height: 300px;
+        flex: 1 1 100%;
+    }
+
+    .product-wrapper {
+        flex: 1 1 100%;
+        max-width: 90%;
+    }
+
+    .product {
+        width: 100%;
+    }
+}
+.hospital-content {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.more-button-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+#more-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#more-button:hover {
+    background-color: #2980b9;
+}
+
+
+ body {
+     margin: 0;
+     background-color: black;
+ }
+
+.main-section {
+    /*background-image: url("https://img.freepik.com/free-vector/ophthalmology-background-with-doctor-ophthalmologist-check-vision-with-eye-test-chart-vector-hand-drawn-illustration-man-optometrist-glasses-drops-machines-eyesight-medical-exam_107791-11406.jpg?ga=GA1.1.133242417.1749731485&semt=ais_hybrid&w=740");*/
+    background-size: 100%;         /* 배경 비율 축소 */
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px 0;
+    min-height: 70vh;             /* 높이도 줄이면 더 작게 보임 */
+    color: white;
+}
+

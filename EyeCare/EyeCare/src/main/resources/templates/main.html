@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeCare</title>
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+<header>
+    <div>
+        <a onclick="location.href='/index'" class="logo-link" style="cursor:pointer;">EyeCare</a>
+    </div>
+    <div class="header-buttons">
+        <button class="header-btn" onclick="location.href='/login'">로그인</button>
+        <button class="header-btn" onclick="location.href='/register'">회원가입</button>
+    </div>
+</header>
+
+<div class="main-section">
+    <div class="hospital-section">
+        <div class="hospital-content">
+            <button onclick="location.href='/hospital'">병원 찾기</button>
+        </div>
+    </div>
+    <div class="glasses-section">
+        <!-- 굳이 안에 콘텐츠 없으면 이대로 비워도 됨 -->
+    </div>
+</div>
+
+<div class="products-section">
+    <div class="products-title">상품</div>
+    <!-- 첫 번째 줄 4개 -->
+    <div class="product-list">
+        <th:block th:each="product, idx : ${products}">
+            <th:block th:if="${idx.index &lt; 4}">
+                <div class="product-wrapper">
+                    <div class="product"></div>
+                    <div class="product-info">
+                        <span th:text="${product.name}">상품명</span><br>
+                        <span th:text="'₩ '+ ${#numbers.formatInteger(product.price, 0, 'COMMA')}">가격</span>
+                    </div>
+                </div>
+            </th:block>
+        </th:block>
+    </div>
+    <!-- 두 번째 줄 4개 -->
+    <div class="product-list">
+        <th:block th:each="product, idx : ${products}">
+            <th:block th:if="${idx.index &gt;= 4}">
+                <div class="product-wrapper">
+                    <div class="product"></div>
+                    <div class="product-info">
+                        <span th:text="${product.name}">상품명</span><br>
+                        <span th:text="'₩ '+ ${#numbers.formatInteger(product.price, 0, 'COMMA')}">가격</span>
+                    </div>
+                </div>
+            </th:block>
+        </th:block>
+    </div>
+
+
+    <div class="more-button-wrapper">
+        <button id="more-button" onclick="location.href='/products'">상품 더보기</button>
+    </div>
+</div>
+
+<script>
+    function toggleChatbox() {
+        const chat = document.getElementById('chatbox-container');
+        chat.style.display = (chat.style.display === 'none') ? 'flex' : 'none';
+    }
+
+    function addMessage(text, type) {
+        const wrapper = document.createElement('div');
+        wrapper.className = type;
+
+        const msg = document.createElement('div');
+        msg.className = 'msg';
+        msg.innerText = text;
+
+        wrapper.appendChild(msg);
+        document.getElementById('chatbox').appendChild(wrapper);
+        document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        if (!message) return;
+
+        addMessage(message, 'user');
+        input.value = '';
+
+        try {
+            const response = await fetch('http://localhost:3000/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message })
+            });
+
+            const data = await response.json();
+            addMessage(data.reply, 'bot');
+        } catch (error) {
+            addMessage('서버와 통신에 문제가 발생했습니다.', 'bot');
+        }
+    }
+</script>
+
+
+</body>
+</html>

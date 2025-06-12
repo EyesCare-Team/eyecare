@@ -1,0 +1,159 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;      /* 변경: 흰색 배경 */
+    color: #111;                 /* 변경: 검정 계열 글씨 */
+    font-family: 'Segoe UI', 'Pretendard', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #fff;      /* 변경: 흰색 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* main과 유사하게 */
+    margin-bottom: 2rem;
+}
+
+.logo-link {
+    color: #111;                /* 변경: 검정 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+.logo-link:hover {
+    color: #000;
+}
+
+.login-container {
+    background-color: #fff;      /* 변경: 흰색 */
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07); /* 연하게 */
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #111;                /* 변경: 검정 */
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #222;                /* 변경: 진한 회색 */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #111;                /* 검정 */
+    transition: border-color 0.22s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #111;         /* 포커스 때도 검정 */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #111;     /* 검정 배경 */
+    color: #fff;                /* 흰색 글씨 */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.22s;
+    margin-top: 1.5rem;
+}
+.login-btn:hover {
+    background-color: #000;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #888;                /* 연한 회색 */
+}
+
+.social-login {
+    margin-top: 2rem;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #aaa;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider span {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+}
+
+/* 소셜 버튼은 심플하게 유지 */
+.social-btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.22s;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.google-btn {
+    background-color: #ffffff;
+    color: #757575;
+    border: 1px solid #e0e0e0;
+}
+
+.google-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.naver-btn {
+    background-color: #03C75A;
+    color: #ffffff;
+}
+
+.naver-btn:hover {
+    background-color: #02b351;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}

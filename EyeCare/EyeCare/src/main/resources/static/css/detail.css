@@ -1,0 +1,303 @@
+body {
+    /* display: flex; 제거! */
+    min-height: 100vh;
+    background-color: #fff;
+    color: #111;
+    font-family: 'Segoe UI', 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100vw; /* 전체 화면 너비로 */
+    left: 0;
+    position: relative; /* 필요 시 fixed, sticky도 가능 */
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.logo-link {
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+.logo-link:hover {
+    color: #000;
+}
+
+/* 전체 컨테이너 기본 정렬 및 레이아웃 유지 (detail 구조) */
+.detail-fixed-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 2rem auto;
+    gap: 3.5rem;
+    min-height: 700px;
+    position: relative;
+}
+
+.detail-image-gallery {
+    flex: 0 0 76%;
+    max-width: 76%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.1rem;
+}
+
+.detail-image-gallery-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 2px 16px rgba(44, 62, 80, 0.07);
+    object-fit: cover;
+}
+
+/* 상품 정보 영역 */
+.detail-info-fixed {
+    flex: 0 0 24%;
+    max-width: 24%;
+    min-width: 260px;
+    height: fit-content;
+    position: sticky;
+    top: 90px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.08);
+    padding: 2rem 2.2rem;
+}
+
+.detail-section {
+    display: flex;
+    width: 100vw;
+    min-height: 90vh;
+    margin: 0;
+    padding: 4vw 5vw;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    gap: 0;
+    color: #000;
+    box-sizing: border-box;
+}
+
+/* 자연스러운 경계선 추가 (이미지와 구매 칸 사이) */
+.detail-image-wrapper {
+    flex: 0 0 70%;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    max-width: 70%;
+    justify-content: center;
+    border-right: 1.5px solid #e6e6e6;
+    padding-right: 2.3rem;
+    transition: border 0.2s;
+    background: transparent;
+    /* 이미지 부모가 전체 공간을 차지하도록 유지 */
+}
+
+.detail-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.15);
+    object-fit: cover;     /* 이미지를 영역에 딱 맞게 */
+    /*height: 100%;          !* 부모 영역 전체 채우기 *!*/
+    min-height: 350px;     /* 최소 높이 지정 */
+    background: #f6f7fa;   /* 사진이 부족한 경우 연한 배경 */
+    display: block;
+}
+
+/* 상품 정보/주문 영역: 30% 차지, 오른쪽 정렬 */
+.detail-info-wrapper {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding-left: 2.5rem;
+    min-width: 0;
+    max-width: 30%;
+    box-sizing: border-box;
+    /* 필요에 따라 배경을 살짝 흰색 음영으로 줄 수도 있음 */
+    background: transparent;
+}
+
+.detail-title {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.detail-brand, .detail-price,
+.detail-brand span, .detail-price span {
+    color: #333;
+    font-weight: bold;
+}
+
+.detail-options {
+    margin-top: 0.8rem;
+    font-size: 1.01rem;
+    color: #000;
+}
+.detail-options select {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #d3d3d3;
+    padding: 0.25rem 0.8rem;
+    background: #fff;
+    color: #000;
+}
+
+.detail-buttons {
+    display: flex;
+    flex-direction: column;   /* 한 줄에 하나씩 */
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.cart-btn,
+.buy-btn {
+    width: 100%;
+    padding: 0.85rem 0;
+    font-size: 1.09rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #111;         /* 검정 배경 */
+    color: #fff;              /* 흰색 글씨 */
+    margin: 0 auto;
+    display: block;
+    transition: background 0.2s;
+}
+
+.cart-btn:hover,
+.buy-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+/* 배송 및 설명란 */
+.detail-shipping,
+.detail-desc {
+    font-size: 0.97rem;
+    background: #fafafa;
+    border-radius: 9px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+.detail-shipping h4,
+.detail-desc h4 {
+    margin-bottom: 0.6rem;
+    color: #000;
+}
+
+.accordion-wrapper {
+    display: flex;
+    gap: 0;    /* gap 제거로 버튼이 완전히 붙습니다 */
+    margin-bottom: 0.7rem;
+}
+
+.accordion-box {
+    margin-top: 0.6rem;
+}
+
+/* 배송안내, 상품 세부 정보 버튼(아코디언 토글) 스타일 */
+.accordion-toggle {
+    background: none;
+    border: none;
+    font-size: 1.02rem;
+    font-weight: bold;
+    color: #000000;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-toggle:active,
+.accordion-toggle:focus {
+    color: #000000;
+}
+
+.accordion-content {
+    margin-top: 0.4rem;
+    font-size: 0.98rem;
+    color: #444;
+    background: #f7fafd;
+    border-radius: 7px;
+    padding: 0.7rem 1rem;
+}
+
+/* 배송안내/상품 세부정보 텍스트도 검정색 */
+.detail-shipping,
+.detail-shipping *,
+.detail-desc,
+.detail-desc * {
+    color: #000 !important;
+}
+
+/* 화면이 작을 땐 경계선 제거 */
+@media screen and (max-width: 900px) {
+    .detail-section {
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 95vw;
+        padding: 1.2rem;
+    }
+    .detail-image-wrapper,
+    .detail-info-wrapper {
+        max-width: 70%;
+        padding-left: 0;
+        border-right: none !important;
+    }
+    .detail-image {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+/* 기존 header 스타일에 아래를 추가하거나 배너(헤더) 전용 클래스에 적용하세요 */
+
+/* 배너와 본문사이 경계를 자연스럽게 - 그림자와 곡선효과 */
+header {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10); /* 살짝 진한 그림자 */
+}
+
+/* 헤더 하단 곡선 효과 */
+header::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 24px; /* 곡선의 높이 */
+    position: absolute;
+    left: 0;
+    bottom: -16px; /* 적당히 겹치게 조정 */
+    background: radial-gradient(ellipse at center, #eeeeee 0%, #fff 100%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+/* 메인(본문)과의 경계선도 더욱 자연스럽게 */
+main {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    border-radius: 22px 22px 0 0;
+    margin-top: -8px; /* 곡선 효과와 자연스럽게 겹치도록 */
+    box-shadow: 0 -2px 16px 0 rgba(44,62,80,0.03);
+    padding-top: 2rem;
+}

@@ -1,0 +1,188 @@
+:root {
+    --admin-bg: #f6f8fb;
+    --admin-main: #ffffff;
+    --admin-point: #2a377a;
+    --admin-point-dark: #19214a;
+    --admin-gray: #e6ecf5;
+    --admin-txt: #222; 
+    --admin-shadow: 0 4px 16px rgba(42, 55, 122, 0.07);
+    --admin-border-radius: 14px;
+}
+
+body {
+    background: var(--admin-bg);
+    font-family: 'Pretendard', 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: var(--admin-txt);
+}
+
+/* Header */
+.admin-header {
+    background: var(--admin-main);
+    color: var(--admin-txt);
+    padding: 1.3rem 2.4rem 1.3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--admin-shadow);
+}
+
+.admin-logo { 
+    font-size: 1.55rem; 
+    font-weight: 700; 
+    letter-spacing: 2px; 
+    color: var(--admin-point); 
+}
+
+.admin-nav-link {
+    color: var(--admin-point);
+    text-decoration: none;
+    font-size: 1.07rem;
+    margin-left: 28px;
+    transition: color 0.18s, border-bottom 0.18s;
+    border-bottom: 2.5px solid transparent;
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+.admin-nav-link.active, .admin-nav-link:hover { 
+    color: var(--admin-point-dark);
+    border-bottom: 2.5px solid var(--admin-point);
+}
+
+/* Main */
+.admin-main {
+    max-width: 900px;
+    margin: 32px auto 0 auto;
+    padding: 2.2rem 2.4rem 2.7rem 2.4rem;
+    background: var(--admin-main);
+    border-radius: var(--admin-border-radius);
+    box-shadow: var(--admin-shadow);
+}
+
+.admin-section h2 {
+    margin-top: 0;
+    font-size: 1.19rem;
+    color: var(--admin-point-dark);
+    letter-spacing: -1px;
+}
+
+/* Form */
+.admin-form {
+    margin-bottom: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 28px;
+    align-items: flex-end;
+}
+.admin-form-group {
+    flex: 1 1 240px;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+}
+.admin-form-group label {
+    font-weight: 500;
+    font-size: 1.04em;
+    color: var(--admin-point-dark);
+    margin-bottom: 7px;
+}
+.admin-form-group input {
+    padding: 8px 15px;
+    border: 1px solid var(--admin-gray);
+    border-radius: 7px;
+    background: #f8fafc;
+    font-size: 1.03em;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.admin-form-group input:focus {
+    border-color: var(--admin-point);
+    background: #fff;
+}
+
+.admin-btn {
+    padding: 5px 22px;
+    background: var(--admin-point);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 7px;
+    box-shadow: none;
+    font-size: 1.04em;
+    cursor: pointer;
+    transition: background 0.16s;
+}
+.admin-btn:hover {
+    background: var(--admin-point-dark);
+}
+
+.table-section {
+    margin-top: 17px;
+}
+.admin-title-table {
+    font-size: 1.04em;
+    margin-bottom: 11px;
+    color: var(--admin-point-dark);
+    font-weight: 600;
+}
+
+.admin-table-wrap {
+    /* wrap for overflow-x */
+    background: #fff;
+    border-radius: 9px;
+    box-shadow: var(--admin-shadow);
+    overflow-x: auto;
+    margin-bottom: 6px;
+}
+.admin-table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    background: #fff;
+}
+.admin-table th,
+.admin-table td {
+    padding: 11px 9px;
+    border-bottom: 1px solid var(--admin-gray);
+    text-align: center;
+    font-size: 1.045em;
+}
+.admin-table th {
+    background: #f1f4fb;
+    color: var(--admin-point-dark);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+.admin-table td {
+    color: #333;
+}
+
+/* 관리자 상품 버튼 */
+.admin-sm-btn {
+    min-width: 60px;
+    padding: 4.7px 11px;
+    border-radius: 6px;
+    border: none;
+    margin-right: 3px;
+    cursor: pointer;
+    font-size: 0.97em;
+    transition: background 0.15s;
+    background: #eef1f9;
+    color: var(--admin-point-dark);
+}
+.admin-sm-btn.edit:hover {
+    background: var(--admin-point);
+    color: #fff;
+}
+.admin-sm-btn.delete {
+    background: #ff5757;
+    color: #fff;
+}
+.admin-sm-btn.delete:hover {
+    background: #cd3535;
+}
+
+

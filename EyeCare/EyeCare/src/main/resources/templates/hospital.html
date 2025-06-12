@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>병원 찾기</title>
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    #map {
+      width: 80%;
+      height: 500px;
+      margin: 2rem auto;
+      border: 1px solid #ccc;
+    }
+  </style>
+
+</head>
+<body>
+<header>
+  <div>
+    <a href="/main" class="logo-link" style="cursor:pointer;">EyeCare</a>
+  </div>
+  <div class="header-buttons">
+    <button class="header-btn" onclick="location.href='/login'">로그인</button>
+    <button class="header-btn" onclick="location.href='/register'">회원가입</button>
+  </div>
+</header>
+
+<main>
+  <h2 style="text-align:center; margin-top:2rem;">내 주변 병원 찾기</h2>
+  <div id="map"></div>
+</main>
+
+<!-- ✅ 최신 네이버 지도 API v3 로드 (ncpKeyId로 교체 필수) -->
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=4ekqtfnsq7&callback=initMap"></script>
+
+<!-- ✅ 인증 실패 시 안내 -->
+<script>
+  window.navermap_authFailure = function () {
+    alert("네이버 지도 인증에 실패했습니다. ncpKeyId를 확인해주세요.");
+  };
+</script>
+
+<!-- ✅ 지도 로드 콜백 -->
+<script>
+  function initMap() {
+    var map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(37.5665, 126.9780), // fallback
+      zoom: 14
+    });
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var userLocation = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        map.setCenter(userLocation);
+
+        // 사용자 위치 마커 추가
+        new naver.maps.Marker({
+          position: userLocation,
+          map: map,
+          title: '내 위치'
+        });
+
+        // ★ 여기서 주변 병원 검색 함수 호출 가능
+        searchNearbyHospitals(userLocation, map);
+
+      }, function() {
+        alert("위치 정보를 가져오는데 실패했습니다.");
+      });
+    } else {
+      alert("이 브라우저에서는 위치 정보가 지원되지 않습니다.");
+    }
+  }
+</script>
+
+
+</body>
+</html>
