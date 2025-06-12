@@ -66,48 +66,5 @@
     </div>
 </div>
 
-<script>
-    function toggleChatbox() {
-        const chat = document.getElementById('chatbox-container');
-        chat.style.display = (chat.style.display === 'none') ? 'flex' : 'none';
-    }
-
-    function addMessage(text, type) {
-        const wrapper = document.createElement('div');
-        wrapper.className = type;
-
-        const msg = document.createElement('div');
-        msg.className = 'msg';
-        msg.innerText = text;
-
-        wrapper.appendChild(msg);
-        document.getElementById('chatbox').appendChild(wrapper);
-        document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
-    }
-
-    async function sendMessage() {
-        const input = document.getElementById('chat-input');
-        const message = input.value.trim();
-        if (!message) return;
-
-        addMessage(message, 'user');
-        input.value = '';
-
-        try {
-            const response = await fetch('http://localhost:3000/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message })
-            });
-
-            const data = await response.json();
-            addMessage(data.reply, 'bot');
-        } catch (error) {
-            addMessage('서버와 통신에 문제가 발생했습니다.', 'bot');
-        }
-    }
-</script>
-
-
 </body>
 </html>
