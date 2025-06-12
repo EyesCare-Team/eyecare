@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="842031f9-3f18-4eeb-8453-4bf6c0e22882" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/products.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/image/main_image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EyeCare.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../EyeCare.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/PdRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/PdRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/controller/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/controller/mainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/entity/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/adminproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/adminproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/hospital.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/hospital.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/com/project_EyeCare/EyeCare/controller/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/com/project_EyeCare/EyeCare/controller/mainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/hospital.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/hospital.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/product/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/product/products.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "YoungWoong22"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/team-eyecare/eyecare.git",
+    "accountId": "56d65865-5ab7-4b7e-9613-3dd04d85d0a8"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2xln6vqr247plcC47oWxe9m6GKQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.EyeCareApplication.executor": "Run",
+    "git-widget-placeholder": "leeyw",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/leeyw/Desktop/해오라기/EyeCare",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "프로젝트",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "kotlinNotebook",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql_aurora"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\leeyw\Desktop\eyecare\EyeCare\EyeCare\src\main\resources\templates\admin" />
+      <recent name="C:\Users\leeyw\Desktop\eyecare\EyeCare\EyeCare\src\main\resources\static\image" />
+      <recent name="C:\Users\leeyw\Desktop\새 폴더\EyeCare\EyeCare\src\main\resources\static\css" />
+      <recent name="C:\Users\leeyw\Desktop\새 폴더\EyeCare\EyeCare\src\main\resources\static" />
+      <recent name="C:\Users\leeyw\Desktop\새 폴더\EyeCare\EyeCare\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EyeCareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="EyeCare" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_EyeCare.EyeCare.EyeCareApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="논리" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\leeyw\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="842031f9-3f18-4eeb-8453-4bf6c0e22882" name="변경" comment="" />
+      <created>1748521356091</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748521356091</updated>
+      <workItem from="1748521357174" duration="8298000" />
+      <workItem from="1748531127240" duration="2010000" />
+      <workItem from="1748535212346" duration="1783000" />
+      <workItem from="1748595987547" duration="16992000" />
+      <workItem from="1748949583034" duration="2142000" />
+      <workItem from="1748962762499" duration="2482000" />
+      <workItem from="1748965274154" duration="13149000" />
+      <workItem from="1749043682553" duration="7827000" />
+      <workItem from="1749464026775" duration="15335000" />
+      <workItem from="1749718904107" duration="15653000" />
+      <workItem from="1749735790472" duration="379000" />
+      <workItem from="1749742630786" duration="324000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

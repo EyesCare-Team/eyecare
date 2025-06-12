@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 상세</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<header>
+    <div>
+        <a onclick="location.href='/index'" class="logo-link" style="cursor:pointer;">EyeCare</a>
+    </div>
+    <div class="header-buttons">
+        <button class="header-btn" onclick="location.href='/login'">로그인</button>
+        <button class="header-btn" onclick="location.href='/register'">회원가입</button>
+    </div>
+</header>
+
+<main>
+    <div class="detail-section">
+        <!-- 이미지 왼쪽 -->
+        <div class="detail-image-wrapper">
+<!--            <img src="/static/image/glasses1.jpg" alt="상품이미지" class="detail-image">-->
+            <img th:src="@{/image/glasses1.jpg}" alt="상품 이미지" class="detail-image"/>
+        </div>
+        <!-- 상품정보/주문오른쪽 -->
+        <div class="detail-info-wrapper">
+            <!-- 상품명, 브랜드, 가격 출력 -->
+            <h2 class="detail-title" th:text="${product.name}"></h2>
+            <div class="detail-brand">BRAND: <span th:text="${product.brand}">BrandName</span></div>
+            <div class="detail-price"><span th:text="'₩ '+ ${#numbers.formatInteger(product.price, 3, 'COMMA')} "></span></div>
+
+            <div class="detail-buttons">
+                <button class="cart-btn">장바구니 담기</button>
+                <button class="buy-btn">바로 구매</button>
+            </div>
+
+            <!-- 배송안내 아코디언 박스 -->
+            <div class="accordion-box">
+                <button type="button" class="accordion-toggle" onclick="toggleAccordion('shipping')">
+                    <span id="shipping-btn-text">배송 안내 +</span>
+                </button>
+                <div class="accordion-content" id="shipping-content" style="display:none;">
+                    <ul>
+                        <li>무료 배송 및 반품 서비스를 제공합니다.
+                            제품은 사용되지 않은 상태여야 하며, 모든 구성품을 포함하고 있어야 합니다.</li>
+                        <li> 반품은 제품을 수령하신 날로부터 7일 이내에 접수해 주셔야 합니다.</li>
+                        <li>평일 오후 2시 이전 주문 시 당일 발송</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 상품세부정보 아코디언 박스 -->
+            <div class="accordion-box">
+                <button type="button" class="accordion-toggle" onclick="toggleAccordion('desc')">
+                    <span id="desc-btn-text">상품 세부 정보 +</span>
+                </button>
+                <div class="accordion-content" id="desc-content" style="display:none;">
+                    <p>
+                        이 상품은 트렌디한 디자인과 뛰어난 착용감을 자랑합니다.<br>
+                        <strong>소재:</strong> 아세테이트<br>
+                        <strong>색상:</strong> 블랙/브라운/클리어<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    function toggleAccordion(type) {
+        const content = document.getElementById(type + '-content');
+        const btnText = document.getElementById(type + '-btn-text');
+        const opened = content.style.display === 'block';
+        if (opened) {
+            content.style.display = 'none';
+            btnText.textContent = (type === 'shipping' ? '배송 안내 +' : '상품 세부 정보 +');
+        } else {
+            content.style.display = 'block';
+            btnText.textContent = (type === 'shipping' ? '배송 안내 -' : '상품 세부 정보 -');
+        }
+    }
+</script>
+</body>
+</html>

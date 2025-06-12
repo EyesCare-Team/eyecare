@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;     /* 메인 테마: 흰색 */
+    color: #111;                /* 메인 테마: 검정 */
+    font-family: 'Segoe UI', 'Pretendard', sans-serif;
+}
+
+.banner {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #fff;     /* 메인 테마: 흰색 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 메인과 유사하게 */
+    margin-bottom: 2rem;
+}
+
+.logo-link {
+    color: #111;                /* 메인 테마: 검정 */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+.logo-link:hover {
+    color: #000;
+}
+
+.signup-container {
+    background-color: #fff;     /* 메인 테마: 흰색 */
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07); /* 연하게 */
+    max-width: 500px;
+    width: 100%;
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #111;                /* 메인 테마: 검정 */
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #222;                /* 진한 회색 */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #111;                /* 검정 */
+    transition: border-color 0.22s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #111;         /* 검정 포커스 */
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #111;     /* 메인 테마: 검정 */
+    color: #fff;                /* 흰색 글씨 */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.22s;
+    margin-top: 1.5rem;
+}
+.signup-btn:hover {
+    background-color: #000;
+}
+
+.signup-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #888;                /* 연한 회색 */
+}
+
+.vision-group {
+    margin-bottom: 1.2rem;
+}
+
+.vision-inputs {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+    justify-content: space-between;
+}
+
+.vision-input {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+}
+
+.vision-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #222;                /* 진한 회색 */
+}
+
+.vision-input input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #111;                /* 검정 */
+    transition: border-color 0.22s;
+}
+
+.vision-input input:focus {
+    outline: none;
+    border-color: #111;         /* 검정 포커스 */
+}
