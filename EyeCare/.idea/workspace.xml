@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="842031f9-3f18-4eeb-8453-4bf6c0e22882" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/products.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/image/main_image.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EyeCare.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../EyeCare.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/ItemRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/PdRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/Repository/PdRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/controller/mainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/controller/mainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/java/com/project_EyeCare/EyeCare/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/account/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/adminproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/adminproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/admin/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/hospital.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/hospital.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/templates/product/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/com/project_EyeCare/EyeCare/controller/mainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/com/project_EyeCare/EyeCare/controller/mainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/account/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/hospital.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/hospital.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/product/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/product/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "YoungWoong22"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;YoungWoong22&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/team-eyecare/eyecare.git",
-    "accountId": "56d65865-5ab7-4b7e-9613-3dd04d85d0a8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/EyesCare-Team/eyecare.git&quot;,
+    &quot;accountId&quot;: &quot;56d65865-5ab7-4b7e-9613-3dd04d85d0a8&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -72,38 +48,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.EyeCareApplication.executor": "Run",
-    "git-widget-placeholder": "leeyw",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/leeyw/Desktop/해오라기/EyeCare",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "kotlinNotebook",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EyeCareApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;영웅&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/leeyw/Desktop/eyecare_project/EyeCare&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;kotlinNotebook&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql_aurora"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\leeyw\Desktop\eyecare\EyeCare\EyeCare\src\main\resources\templates\admin" />
@@ -116,7 +92,6 @@
   <component name="RunManager">
     <configuration name="EyeCareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="EyeCare" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_EyeCare.EyeCare.EyeCareApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,6 +131,10 @@
       <workItem from="1749718904107" duration="15653000" />
       <workItem from="1749735790472" duration="379000" />
       <workItem from="1749742630786" duration="324000" />
+      <workItem from="1749743450188" duration="72000" />
+      <workItem from="1749743527941" duration="22000" />
+      <workItem from="1749743557707" duration="54000" />
+      <workItem from="1749743643389" duration="20000" />
     </task>
     <servers />
   </component>

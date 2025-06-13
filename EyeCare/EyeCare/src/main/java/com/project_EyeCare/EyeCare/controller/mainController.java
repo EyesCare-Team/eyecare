@@ -25,7 +25,7 @@ public class mainController {
     //메인페이지
     @GetMapping("/index")
     public String mainPd(Model model) {
-        // 0~7 (8개) 상품만 조회
+        //8개 상품만 조회
         Pageable pageable = PageRequest.of(0, 8);
         List<PD> samplePd = pdRepository.findAll(pageable).getContent();
         model.addAttribute("products", samplePd);

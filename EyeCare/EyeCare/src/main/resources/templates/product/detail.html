@@ -22,7 +22,9 @@
         <!-- 이미지 왼쪽 -->
         <div class="detail-image-wrapper">
 <!--            <img src="/static/image/glasses1.jpg" alt="상품이미지" class="detail-image">-->
-            <img th:src="@{/image/glasses1.jpg}" alt="상품 이미지" class="detail-image"/>
+<!--            <img th:src="@{/image/glasses1.jpg}" alt="상품 이미지" class="detail-image"/>-->
+            <img th:src="@{${product.imageUrl}}" alt="상품 이미지" class="detail-image"/>
+
         </div>
         <!-- 상품정보/주문오른쪽 -->
         <div class="detail-info-wrapper">

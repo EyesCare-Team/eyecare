@@ -29,6 +29,7 @@
     </div>
 </div>
 
+<!-- 상품 카드 구역 수정: .product를 .product-img로 변경하고, 실제 이미지 들어갈 수 있도록 개선 -->
 <div class="products-section">
     <div class="products-title">상품</div>
     <!-- 첫 번째 줄 4개 -->
@@ -36,7 +37,9 @@
         <th:block th:each="product, idx : ${products}">
             <th:block th:if="${idx.index &lt; 4}">
                 <div class="product-wrapper">
-                    <div class="product"></div>
+                    <div class="product-img">
+                        <img th:src="${product.imageUrl}" alt="상품 이미지"/>
+                    </div>
                     <div class="product-info">
                         <span th:text="${product.name}">상품명</span><br>
                         <span th:text="'₩ '+ ${#numbers.formatInteger(product.price, 0, 'COMMA')}">가격</span>
@@ -50,7 +53,9 @@
         <th:block th:each="product, idx : ${products}">
             <th:block th:if="${idx.index &gt;= 4}">
                 <div class="product-wrapper">
-                    <div class="product"></div>
+                    <div class="product-img">
+                        <img th:src="${product.imageUrl}" alt="상품 이미지"/>
+                    </div>
                     <div class="product-info">
                         <span th:text="${product.name}">상품명</span><br>
                         <span th:text="'₩ '+ ${#numbers.formatInteger(product.price, 0, 'COMMA')}">가격</span>
@@ -59,8 +64,6 @@
             </th:block>
         </th:block>
     </div>
-
-
     <div class="more-button-wrapper">
         <button id="more-button" onclick="location.href='/products'">상품 더보기</button>
     </div>

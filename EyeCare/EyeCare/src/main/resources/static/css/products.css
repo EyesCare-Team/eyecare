@@ -71,56 +71,86 @@ header {
     letter-spacing: -1px;
 }
 
+/* 상품 4개씩 한 줄 grid로 */
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 2.2rem;
-    justify-content: flex-start;
-    width: 100%;
+    gap: 32px;           /* 간격 조정 가능 */
+    justify-content: flex-start;  /* 맨 왼쪽 정렬 */
 }
 
-/* 기존 product-wrapper 유지, 추가 스타일 몇 가지 */
-.product-img {
+
+.product-wrapper {
+    /* 개별 상품 카드 추가적인 여백 필요 시
+    margin: 8px; (필요 없으면 생략)
+    */
     width: 100%;
-    height: 130px;
-    background: linear-gradient(135deg, #f0f4fa, #e3e8ee 80%);
-    border-radius: 10px;
+    max-width: 320px;
+    min-width: 220px;
+    background: #fafbfc;
+    border-radius: 20px;
+    padding: 2rem 1rem 1.5rem 1rem;
+    box-shadow: 0 6px 18px rgba(50,70,130,0.06),
+                0 2px 8px rgba(0,0,0,0.045);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.5px solid #e6eaf1;
+    transition: box-shadow 0.2s, border-color 0.18s;
+    /* 혹시 기본으로 margin이 있다면 더 늘리거나, gap만 있어도 OK */
+    /* margin: 16px; 처럼 직접 줄 수도 있음 */
+}
+.product-wrapper:hover {
+    box-shadow: 0 12px 36px rgba(50,70,140,0.13);
+    border: 1.5px solid #97bdfa;
+}
+
+.product-img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1.1rem;
+    background: linear-gradient(120deg, #f5f7fa 80%, #e2effb 100%);
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
     overflow: hidden;
+    border: none;
+    box-shadow: none;
 }
 .product-img img {
-    max-width: 90%;
-    max-height: 100%;
+    width: 120%;
+    height: 120%;
     object-fit: contain;
-    transition: transform 0.2s;
-}
-.product-wrapper:hover .product-img img {
-    transform: scale(1.08);
+    border-radius: 3px;
+    background: white;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition: transform 0.13s;
 }
 
-/* 상품 카드 */
-.product-wrapper {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 24px rgba(44, 62, 80, 0.08);
-    padding: 2rem 1.5rem 1.3rem 1.5rem;
-    max-width: 270px;
-    min-width: 220px;
-    flex: 1 1 220px;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-    transition: box-shadow 0.18s;
-    cursor: pointer;
+/* 상품명·가격은 기존 유지 또는 좀 더 크고 명확하게 */
+.product-info {
+    width: 100%;
+    text-align: center;
+    padding-top: 0.6rem;
+    color: #181b2b;
 }
-.product-wrapper:hover {
-    box-shadow: 0 12px 36px rgba(44, 62, 80, 0.13);
-    transform: translateY(-2px) scale(1.03);
+.product-info a {
+    font-size: 1.13rem;
+    font-weight: bold;
+    color: #101829;
+    text-decoration: none;
+}
+.product-info a:hover {
+    color: #0076d6;
+}
+.product-info span {
+    margin-top: 0.3rem;
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #000; /* 검은색으로 변경 */
+    letter-spacing: -1px;
 }
 
 /* (이미지 부분 공간용) .product */
@@ -135,14 +165,6 @@ header {
     justify-content: center;
 }
 
-/* 상품 정보 */
-.product-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
-}
 
 .product-name {
     font-size: 1.12rem;
@@ -172,7 +194,7 @@ header {
 }
 
 .product-price {
-    color: #20ad4b;
+    color: #000 !important;
     font-size: 1.05rem;
     font-weight: bold;
 }
@@ -195,28 +217,15 @@ header {
     box-shadow: 0 5px 16px rgba(76, 151, 243, 0.10);
 }
 
-.product-info {
-    font-size: 1.03rem;
-    color: #212529;
-    width: 100%;
-}
-
-.product-info a {
-    font-size: 1.07rem;
-    color: #1861c9;
-    text-decoration: underline;
-    font-weight: bold;
-    transition: color 0.17s;
-}
-.product-info a:hover {
-    color: #23479d;
+.product-info a, .product-info span {
+    font-size: 0.98rem;         /* 상품명, 가격 모두 작은 사이즈 */
+    line-height: 1.13;          /* 붙은 느낌을 위해 */
+    letter-spacing: -0.5px;
 }
 
 .product-info span {
-    color: #333;
-    font-weight: bold;
-    display: block;
-    margin-top: 0.3rem;
+    font-weight: 500;
+    color: #000 !important; /* 검은색, 우선순위! */
 }
 
 @media (max-width: 700px) {
@@ -225,4 +234,22 @@ header {
         gap: 1.5rem;
         align-items: center;
     }
+}
+
+.product-img img {
+    width: 150px;    /* 원하는 너비 */
+    height: 150px;   /* 원하는 높이 */
+    object-fit: cover; /* 비율유지 & 자르기 */
+    border-radius: 8px; /* (선택) 라운드처리 */
+}
+
+@media (max-width: 900px) {
+    .product-img { height: 150px; }
+    .product-wrapper { max-width: 44vw; min-width: 37vw; }
+}
+
+.product-wrapper {
+    flex: 0 0 calc(25% - 24px); /* 한줄에 4개(25%)에서 gap을 빼서 넓이 확보 */
+    box-sizing: border-box;
+    margin-bottom: 32px;        /* 행 사이 여백 */
 }

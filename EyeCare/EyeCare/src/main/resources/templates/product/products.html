@@ -21,19 +21,18 @@
     <div class="product-list">
     <th:block th:each="prod : ${products}">
         <div class="product-wrapper">
-            <div class="product"
+            <div class="product-img"
                  style="cursor:pointer;"
                  th:onclick="|location.href='@{/products/{id}(id=${prod.product_id})}'|">
                 <!-- 상품 이미지 추가 -->
-                <div class="product-img">
-                    <img th:src="@{/image/glasses1.jpg}" alt="상품 이미지" />
-                </div>
+                    <img th:src="@{${prod.imageUrl}}" alt="상품 이미지" />
             </div>
             <div class="product-info">
-                <a th:href="@{/products/{id}(id=${prod.product_id})}" th:text="${prod.name}"
-                   style="cursor:pointer; color:inherit; text-decoration:underline;">상품명</a><br>
-                <span th:text="'₩ '+ ${prod.price}">가격</span>
-            </div>
+    <a th:href="@{/products/{id}(id=${prod.product_id})}" th:text="${prod.name}"
+       style="cursor:pointer;">상품명</a>
+    <!-- 가격에 천 단위 쉼표가 보이도록 Thymeleaf의 #numbers.formatInteger 사용 -->
+<span th:text="'₩ ' + ${#numbers.formatInteger(prod.price, 0, 'COMMA')}">가격</span>
+</div>
         </div>
     </th:block>
     </div>

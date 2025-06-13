@@ -12,6 +12,8 @@ public class PD {
     private String name;
     private int price;
     private String brand;
+    private String imageUrl;
+
 
     public int getProduct_id() { return product_id; }
     public void setProduct_id(int product_id) { this.product_id = product_id; }
@@ -24,4 +26,7 @@ public class PD {
 
     public String getBrand() { return brand; }
     public void setBrand(String brand) { this.brand = brand; }
+
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 }
