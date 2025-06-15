@@ -13,7 +13,6 @@
       border: 1px solid #ccc;
     }
   </style>
-
 </head>
 <body>
 <header>
@@ -27,7 +26,6 @@
 </header>
 
 <main>
-  <!-- 검색어 입력과 버튼을 h2와 한 줄에 정렬 -->
   <div class="search-header">
     <h2>내 주변 병원 찾기</h2>
     <input type="text" id="search-input" placeholder="예: 병원, 안경점">
@@ -37,8 +35,8 @@
   <div id="map"></div>
 </main>
 
-<!-- ✅ 최신 네이버 지도 API v3 로드 (ncpKeyId로 교체 필수) -->
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=4ekqtfnsq7&callback=initMap"></script>
+<!-- ✅ 네이버 지도 API 로드 -->
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=mwzxrqlcp6&callback=initMap"></script>
 
 <!-- ✅ 인증 실패 시 안내 -->
 <script>
@@ -47,7 +45,6 @@
   };
 </script>
 
-<!-- ✅ 지도 로드 콜백 -->
 <script>
   let currentLocation = null;
   let map = null;
@@ -55,7 +52,7 @@
 
   function initMap() {
     map = new naver.maps.Map('map', {
-      center: new naver.maps.LatLng(37.5665, 126.9780),
+      center: new naver.maps.LatLng(37.5665, 126.9780), // 초기 지도 위치 (서울 시청)
       zoom: 14
     });
 
@@ -63,72 +60,73 @@
       navigator.geolocation.getCurrentPosition(function (position) {
         const userLat = position.coords.latitude;
         const userLng = position.coords.longitude;
-        const userLocation = new naver.maps.LatLng(userLat, userLng);
+        console.log("✅ 위치 획득:", userLat, userLng);
 
+        const userLocation = new naver.maps.LatLng(userLat, userLng);
+        currentLocation = { lat: userLat, lng: userLng };
         map.setCenter(userLocation);
 
-        // 내 위치 마커
         new naver.maps.Marker({
           position: userLocation,
           map: map,
           title: "내 위치"
         });
 
-        // ✅ 병원/안경점 마커 표시 함수 호출
-        currentLocation = { lat: userLat, lng: userLng };
+      }, function (error) {
+        console.warn("❌ 위치 획득 실패:", error);
 
-      }, function () {
-        alert("위치 정보를 가져올 수 없습니다.");
+        // fallback 위치 설정 (부산 서면역)
+        const fallbackLat = 35.1576;
+        const fallbackLng = 129.0595;
+
+        const fallbackLocation = new naver.maps.LatLng(fallbackLat, fallbackLng);
+        currentLocation = { lat: fallbackLat, lng: fallbackLng };
+        map.setCenter(fallbackLocation);
+
+        new naver.maps.Marker({
+          position: fallbackLocation,
+          map: map,
+          title: "기본 위치"
+        });
+
+        alert("위치 정보를 가져올 수 없습니다. 기본 위치로 설정합니다.");
       });
     } else {
-      alert("이 브라우저에서는 위치 정보가 지원되지 않습니다.");
+      alert("이 브라우저는 위치 정보 기능을 지원하지 않습니다.");
     }
   }
 
-  // ✅ 병원 마커 표시 함수
   function clearMarkers() {
     markers.forEach(m => m.setMap(null));
     markers = [];
   }
 
   function searchNearbyHospitals() {
-    const keyword = document.getElementById("search-input").value.trim() || "병원";
-
     if (!currentLocation) {
       alert("위치 정보를 아직 가져오지 못했습니다.");
       return;
     }
 
-    fetch(`/api/hospitals/nearby?lat=${currentLocation.lat}&lng=${currentLocation.lng}`)
-            .then(res => res.json())
-            .then(data => {
-              clearMarkers(); // 기존 마커 제거
+    clearMarkers();
 
-              data.forEach(h => {
-                const iconColor = keyword.includes("안경") ? "red" : "blue";
+    const mockResults = [
+      { name: "테스트 병원", lat: currentLocation.lat + 0.001, lng: currentLocation.lng + 0.001 },
+      { name: "테스트 안경점", lat: currentLocation.lat - 0.001, lng: currentLocation.lng - 0.001 },
+    ];
 
-                const marker = new naver.maps.Marker({
-                  position: new naver.maps.LatLng(h.lat, h.lng),
-                  map: map,
-                  icon: {
-                    content: `<div style="background:${iconColor};width:12px;height:12px;border-radius:50%;border:2px solid white;"></div>`,
-                    size: new naver.maps.Size(14, 14),
-                    anchor: new naver.maps.Point(7, 7)
-                  },
-                  title: h.name
-                });
-
-                markers.push(marker);
-              });
-            });
+    mockResults.forEach(h => {
+      const marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(h.lat, h.lng),
+        map: map,
+        title: h.name
+      });
+      markers.push(marker);
+    });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("search-btn").addEventListener("click", searchNearbyHospitals);
   });
 </script>
-
-
-
 </body>
 </html>
