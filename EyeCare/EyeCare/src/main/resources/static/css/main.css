@@ -242,3 +242,10 @@ header {
     color: white;
 }
 
+.product-img img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}

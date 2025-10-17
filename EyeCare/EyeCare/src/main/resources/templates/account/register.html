@@ -13,7 +13,8 @@
 </header>
 <div class="signup-container">
     <h2>회원가입</h2>
-    <form>
+    <!--서버 action="/register" < 에서 user로 변경 -->
+    <form method="post" action="/member">
         <div class="form-group">
             <label for="name">이름</label>
             <input type="text" id="name" name="name" required>
@@ -38,12 +39,12 @@
             <label>시력</label>
             <div class="vision-inputs">
                 <div class="vision-input">
-                    <label for="vision-left">좌안</label>
-                    <input type="text" id="vision-left" name="vision-left" required>
+                    <label for="visionLeft">좌안</label>
+                    <input type="text" id="visionLeft" name="visionLeft" required>
                 </div>
                 <div class="vision-input">
-                    <label for="vision-right">우안</label>
-                    <input type="text" id="vision-right" name="vision-right" required>
+                    <label for="visionRight">우안</label>
+                    <input type="text" id="visionRight" name="visionRight" required>
                 </div>
             </div>
         </div>

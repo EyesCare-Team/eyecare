@@ -1,10 +1,8 @@
-package com.project_EyeCare.EyeCare.service;
+package com.project_EyeCare.EyeCare.Service;
 import com.project_EyeCare.EyeCare.Repository.PdRepository;
 import com.project_EyeCare.EyeCare.entity.PD;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 
 @Service

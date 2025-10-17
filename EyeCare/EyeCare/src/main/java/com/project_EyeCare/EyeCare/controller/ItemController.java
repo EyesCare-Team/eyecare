@@ -3,7 +3,7 @@ package com.project_EyeCare.EyeCare.controller;
 import com.project_EyeCare.EyeCare.Repository.ItemRepository;
 import com.project_EyeCare.EyeCare.Repository.PdRepository;
 import com.project_EyeCare.EyeCare.entity.PD;
-import com.project_EyeCare.EyeCare.service.ItemService;
+import com.project_EyeCare.EyeCare.Service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
