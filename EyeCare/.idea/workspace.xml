@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="842031f9-3f18-4eeb-8453-4bf6c0e22882" name="변경" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/css/products.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/EyeCare/src/main/resources/static/image/main_image.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EyeCare.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../EyeCare.zip" afterDir="false" />
@@ -30,6 +31,9 @@
       <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/hospital.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/hospital.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EyeCare/target/classes/templates/product/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EyeCare/target/classes/templates/product/products.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> parent of f06d52f (체크)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +160,13 @@
       <workItem from="1749718904107" duration="15653000" />
       <workItem from="1749735790472" duration="379000" />
       <workItem from="1749742630786" duration="324000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1749743450188" duration="72000" />
+      <workItem from="1749743527941" duration="22000" />
+      <workItem from="1749743557707" duration="54000" />
+      <workItem from="1749743643389" duration="20000" />
+>>>>>>> parent of f06d52f (체크)
     </task>
     <servers />
   </component>
