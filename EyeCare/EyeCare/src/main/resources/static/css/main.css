@@ -274,3 +274,116 @@ header {
 #search-btn:hover {
     background-color: #2980b9;
 }
+
+.product-img {
+    width: 250px;
+    height: 250px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.hospital-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* 상단 검색창 영역 */
+.hospital-page .search-header {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hospital-page #map {
+    flex: 1;
+    width: 100%;
+    height: 100vh; /* ✅ 전체 화면 지도 */
+    border: none;
+}
+
+.hospital-page select,
+.hospital-page button {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.hospital-page button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.hospital-page button:hover {
+    background-color: #2980b9;
+}
+
+.info-panel {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none; /* 처음에는 숨김 */
+    z-index: 1000;
+}
+
+.info-panel h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #111;
+}
+
+.info-panel p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.info-panel a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.info-panel a:hover {
+    text-decoration: underline;
+}
+
+#close-panel {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

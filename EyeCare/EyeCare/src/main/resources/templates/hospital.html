@@ -4,16 +4,6 @@
   <meta charset="UTF-8" />
   <title>병원 찾기</title>
   <link rel="stylesheet" href="/css/main.css">
-
-  <style>
-    #map {
-      width: 80%;
-      height: 500px;
-      margin: 2rem auto;
-      border: 1px solid #ccc;
-    }
-  </style>
-
 </head>
 <body>
 <header>
@@ -26,24 +16,31 @@
   </div>
 </header>
 
-<main>
-  <!-- 검색어 입력과 버튼을 h2와 한 줄에 정렬 -->
+<main class="hospital-page">
   <div class="search-header">
-    <h2>내 주변 병원 찾기</h2>
+    <h2 style="margin:0;">내 주변 병원 찾기</h2>
     <select id="search-input">
       <option value="병원">병원</option>
-      <option value="안경점">안경점</option>
-      <option value="의원">의원</option>
+      <option value="약국">약국</option>
+      <option value="안과">안과</option>
       <option value="한의원">한의원</option>
     </select>
     <button id="search-btn">검색</button>
   </div>
 
+  <div class="info-panel" id="info-panel">
+    <button id="close-panel">&times;</button>
+    <h3 id="info-title"></h3>
+    <p id="info-address"></p>
+    <a id="info-url" href="#" target="_blank">카카오 장소 보기</a>
+  </div>
+
   <div id="map"></div>
 </main>
 
+
 <!-- ✅ 최신 네이버 지도 API v3 로드 (ncpKeyId로 교체 필수) -->
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=네이버 key&callback=initMap"></script>
+<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=2qj8lppskw&callback=initMap"></script>
 
 <!-- ✅ 인증 실패 시 안내 -->
 <script>
@@ -88,8 +85,7 @@
     }
 
     // 🔑 Kakao REST API Key 직접 삽입 (보안상 위험하나 임시 대응용)
-    const kakaoApiKey = "KakaoAK 카카오 rest api key";
-
+    const kakaoApiKey = "KakaoAK d540cb060e7363318363b3813278082c";
     const url = `https://dapi.kakao.com/v2/local/search/keyword.json?query=${encodeURIComponent(keyword)}&x=${currentLocation.lng}&y=${currentLocation.lat}&radius=3000`;
 
     fetch(url, {
@@ -109,6 +105,7 @@
                 const lat = parseFloat(doc.y);
                 const lng = parseFloat(doc.x);
                 const name = doc.place_name;
+                const placeUrl = doc.place_url; // ✅ 카카오 장소 페이지 URL
 
                 const marker = new naver.maps.Marker({
                   position: new naver.maps.LatLng(lat, lng),
@@ -119,6 +116,25 @@
                     anchor: new naver.maps.Point(7, 7)
                   },
                   title: name
+                });
+
+                // 🔹 마커 클릭 시 정보 패널 띄우기
+                naver.maps.Event.addListener(marker, "click", function() {
+                  const panel = document.getElementById("info-panel");
+                  const title = document.getElementById("info-title");
+                  const address = document.getElementById("info-address");
+                  const url = document.getElementById("info-url");
+
+                  title.textContent = name;
+                  address.textContent = doc.road_address_name || doc.address_name;
+                  url.href = placeUrl;
+
+                  panel.style.display = "block";
+
+                  // 내 위치 → 마커까지 경로 표시
+                  if(currentLocation) {
+                    drawRoute(currentLocation, {lat, lng});
+                  }
                 });
 
                 markers.push(marker);
@@ -133,9 +149,6 @@
     document.getElementById("search-btn").addEventListener("click", searchNearbyHospitals);
   });
 </script>
-
-
-
 
 </body>
 </html>
