@@ -18,31 +18,25 @@
 
 <main class="hospital-page">
   <div class="search-header">
-    <h2 style="margin:0;">내 주변 병원 찾기</h2>
+    <h2 style="margin:0;">내 주변 병원 확인하기</h2>
     <select id="search-input">
       <option value="병원">병원</option>
-      <option value="약국">약국</option>
-      <option value="안과">안과</option>
-      <option value="한의원">한의원</option>
     </select>
-    <button id="search-btn">검색</button>
+    <button id="search-btn">확인</button>
   </div>
 
   <div class="info-panel" id="info-panel">
     <button id="close-panel">&times;</button>
     <h3 id="info-title"></h3>
     <p id="info-address"></p>
-    <a id="info-url" href="#" target="_blank">카카오 장소 보기</a>
+    <a id="info-url" href="#" target="_blank">장소 보기</a>
   </div>
 
   <div id="map"></div>
 </main>
 
+<!-- ✅ 네이버 지도 API -->
 
-<!-- ✅ 최신 네이버 지도 API v3 로드 (ncpKeyId로 교체 필수) -->
-<script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=2qj8lppskw&callback=initMap"></script>
-
-<!-- ✅ 인증 실패 시 안내 -->
 <script>
   let currentLocation = null;
   let map = null;
@@ -50,7 +44,7 @@
 
   function initMap() {
     map = new naver.maps.Map('map', {
-      center: new naver.maps.LatLng(37.5665, 126.9780),
+      center: new naver.maps.LatLng(37.5667, 126.9784),
       zoom: 14
     });
 
@@ -78,34 +72,26 @@
   }
 
   function searchNearbyHospitals() {
-    const keyword = document.getElementById("search-input").value.trim() || "병원";
     if (!currentLocation) {
       alert("위치 정보를 아직 가져오지 못했습니다.");
       return;
     }
 
-    // 🔑 Kakao REST API Key 직접 삽입 (보안상 위험하나 임시 대응용)
-    const kakaoApiKey = "KakaoAK d540cb060e7363318363b3813278082c";
-    const url = `https://dapi.kakao.com/v2/local/search/keyword.json?query=${encodeURIComponent(keyword)}&x=${currentLocation.lng}&y=${currentLocation.lat}&radius=3000`;
-
-    fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: kakaoApiKey
-      }
-    })
-            .then(res => {
-              if (!res.ok) throw new Error("API 호출 실패");
-              return res.json();
-            })
+    // ✅ query 제거: 내 위치 기준 병원 자동 검색
+    fetch(`/api/hospitals/nearby?lat=${currentLocation.lat}&lng=${currentLocation.lng}`)
+            .then(res => res.json())
             .then(data => {
               clearMarkers();
 
-              data.documents.forEach(doc => {
-                const lat = parseFloat(doc.y);
-                const lng = parseFloat(doc.x);
-                const name = doc.place_name;
-                const placeUrl = doc.place_url; // ✅ 카카오 장소 페이지 URL
+              if (data.length === 0) {
+                alert("근처 병원을 찾지 못했습니다.");
+                return;
+              }
+
+              data.forEach(doc => {
+                const lat = doc.lat;
+                const lng = doc.lng;
+                const name = doc.name;
 
                 const marker = new naver.maps.Marker({
                   position: new naver.maps.LatLng(lat, lng),
@@ -118,7 +104,7 @@
                   title: name
                 });
 
-                // 🔹 마커 클릭 시 정보 패널 띄우기
+                // 🔹 마커 클릭 시 정보 패널 표시
                 naver.maps.Event.addListener(marker, "click", function() {
                   const panel = document.getElementById("info-panel");
                   const title = document.getElementById("info-title");
@@ -126,15 +112,10 @@
                   const url = document.getElementById("info-url");
 
                   title.textContent = name;
-                  address.textContent = doc.road_address_name || doc.address_name;
-                  url.href = placeUrl;
+                  address.textContent = doc.roadAddress || doc.address;
+                  url.href = doc.placeUrl;
 
                   panel.style.display = "block";
-
-                  // 내 위치 → 마커까지 경로 표시
-                  if(currentLocation) {
-                    drawRoute(currentLocation, {lat, lng});
-                  }
                 });
 
                 markers.push(marker);
@@ -149,6 +130,5 @@
     document.getElementById("search-btn").addEventListener("click", searchNearbyHospitals);
   });
 </script>
-
 </body>
 </html>

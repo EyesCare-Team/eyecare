@@ -16,8 +16,10 @@ public class HospitalEntity {
     private Long id;
 
     private String name;
-
     private double lat;
-
     private double lng;
+
+    private String address;
+    private String roadAddress;
+    private String placeUrl;
 }

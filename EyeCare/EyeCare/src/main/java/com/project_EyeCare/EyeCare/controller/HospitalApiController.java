@@ -3,10 +3,7 @@ package com.project_EyeCare.EyeCare.controller;
 import com.project_EyeCare.EyeCare.entity.HospitalEntity;
 import com.project_EyeCare.EyeCare.service.HospitalService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,11 +17,8 @@ public class HospitalApiController {
     @GetMapping("/nearby")
     public List<HospitalEntity> getNearby(
             @RequestParam double lat,
-            @RequestParam double lng,
-            @RequestParam(defaultValue = "병원 안경점") String query
+            @RequestParam double lng
     ) {
-        return hospitalService.findAndSaveNearby(lat, lng, query);
-
+        return hospitalService.findAndSaveNearby(lat, lng);
     }
-
 }
